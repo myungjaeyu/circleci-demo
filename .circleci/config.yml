@@ -66,7 +66,7 @@ workflows:
   app_commit:
     jobs:
       - build
-  requires_test:
+  requires_test_A:
     jobs:
       - test0
       - test1:
@@ -77,4 +77,18 @@ workflows:
             - test1
       - test3:
           requires:
+            - test2
+  requires_test_B:
+    jobs:
+      - test0
+      - test1:
+          requires:
+            - test0
+      - test2:
+          requires:
+            - test0
+      - test3:
+          requires:
+            - test0
+            - test1
             - test2
