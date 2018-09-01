@@ -68,7 +68,11 @@ workflows:
       - build
   requires_test_A:
     jobs:
-      - test0
+      - test0:
+          filters:
+            branches:
+              only: 
+                - requires
       - test1:
           requires:
             - test0
@@ -80,7 +84,11 @@ workflows:
             - test2
   requires_test_B:
     jobs:
-      - test0
+      - test0:
+          filters:
+            branches:
+              only: 
+                - requires
       - test1:
           requires:
             - test0
