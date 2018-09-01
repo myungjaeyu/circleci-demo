@@ -1,9 +1,0 @@
-{
-    "main": {
-        "js": "/static/js/main.js",
-        "css": "/static/css/main.css"
-    },
-    "home": {
-        "js": "/static/js/home.js"
-    }
-}

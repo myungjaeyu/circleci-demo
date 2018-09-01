@@ -1,28 +1,11 @@
 {
-  "name": "lambda-ssr-poc",
+  "name": "circleci-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "handler.js",
   "scripts": {
     "test": "ava --verbose"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/myungjaeyu/aws-lambda-ssr-poc.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/myungjaeyu/aws-lambda-ssr-poc/issues"
-  },
-  "homepage": "https://github.com/myungjaeyu/aws-lambda-ssr-poc#readme",
-  "dependencies": {
-    "aws-serverless-express": "^3.2.0",
-    "express": "^4.16.3"
-  },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "serverless-apigw-binary": "^0.4.4"
+    "ava": "^0.25.0"
   }
 }
