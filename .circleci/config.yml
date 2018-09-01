@@ -22,9 +22,59 @@ jobs:
       - run: 
           name: 테스트 코드를 실행합니다.
           command: npm run test
-
+  test0:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: A를 외칩니다.
+          command: echo A
+  test1:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: B를 외칩니다.
+          command: echo B
+  test2:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: C를 외칩니다.
+          command: echo C
+  test3:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: D를 외치고 NPM 버전 확인과 디렉토리 내부 구조 확인
+          command: |
+            echo D
+            npm -v
+            ls
 workflows:
   version: 2
   app_commit:
     jobs:
       - build
+  requires_test:
+    jobs:
+      - test0
+      - test1:
+          requires:
+            - test0
+      - test2:
+          requires:
+            - test1
+      - test3:
+          requires:
+            - test2
